@@ -74,7 +74,7 @@ Use *pipe* to chain stdout of one program to stdin of another
 
 - Find number of handlers in MS
 
-  ps as | grep handler | grep -v grep | wc -l
+  ps ax | grep handler | grep -v grep | wc -l
 
 - Find which IPs CV forwarders connect to
 
