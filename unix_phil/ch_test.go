@@ -22,10 +22,10 @@ func reader(id int, ch chan int, wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	for i := range ch {
-		fmt.Printf("[%d] %d\n", id, i)
+		fmt.Printf("[reader %d] %d\n", id, i)
 	}
 
-	fmt.Printf("[%d] exit\n", id)
+	fmt.Printf("[reader %d] exit\n", id)
 }
 
 func writer(ch chan int, wg *sync.WaitGroup) {
@@ -33,7 +33,7 @@ func writer(ch chan int, wg *sync.WaitGroup) {
 
 	for i := 0; i < 10; i++ {
 		ch <- i
-		time.Sleep(1 * time.Second)
+		time.Sleep(100 * time.Millisecond)
 	}
 
 	close(ch)
