@@ -32,7 +32,7 @@ And your program is logic interacting with files
 
 * Do One Thing and Do It Well (DOTADIW)
 
-Each program only does one thing
+Each program does only one thing
 
 Keep the logic simple and straitforward. It tends to be bug-free when it's simple.
 
