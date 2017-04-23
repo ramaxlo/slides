@@ -100,8 +100,28 @@ See demo
 
 Pipe is Channel in OS level
 
-or, 
+or
+
 Channel is Pipe in language level?
+
+* Summary
+
+* Summary
+
+One sentence to describe UNIX philosophy
+以簡馭繁
+
+It's easy to understand, but hard to apply in practice (知易行難)
+People (including me) tend to make things complicated instead of coming out simple, generic patterns.
+
+Complicated -> bug-prone
+
+* How to overcome?
+Read code. Lots of code.
+
+Learn how those geniuses think about software architecture.
+
+Thanks to Open Source, now you have code in your hands.
 
 * References
 
