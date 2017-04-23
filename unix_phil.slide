@@ -1,0 +1,110 @@
+UNIX Philosophy
+Apr 23 2017
+
+Ramax Lo
+
+* Disclaimer
+
+This is a summary from my learning experience of UNIX/Linux
+Just personal opinions. Might not be correct.
+Use it with cautions.
+
+* What is UNIX Philosophy?
+
+- The way of human interacting with computer
+- Thoughts behind UNIX design and how programs are constructed to support UNIX functionalities
+
+* Philosophy 1
+
+* Everything Is File
+
+*File* is the concept to model resources managed by UNIX
+eg. device, socket, console, etc.
+
+Each file is represented by a file descriptor for a given process
+
+Basic operations:
+open, read, write, close
+
+And your program is logic interacting with files
+
+* Philosophy 2
+
+* Do One Thing and Do It Well (DOTADIW)
+
+Each program only does one thing
+
+Keep the logic simple and straitforward. It tends to be bug-free when it's simple.
+
+Utilities
+
+ ls, sed, cat, more, sort, uniq, cut, head, tail, wc, grep, find, ...
+
+* Philosophy 3
+
+* Make program act like a filter
+
+Each program has 3 fds opened by UNIX:
+stdin(0), stdout(1), stderr(2)
+
+The easy way to interact with outside world:
+Read input from stdin, write output to stdout
+
+Program only outputs processed result and nothing else.
+
+* Philosophy 4
+
+* Composition
+
+Compose basic blocks to perform sophisticated tasks
+
+Use *pipe* to chain stdout of one program to stdin of another
+
+* Basic usage
+
+- Find SD device
+
+  ls /dev | grep mmc
+
+- List size of folders in ascending order
+
+  du --max-depth=1 | sort -k 1n
+
+* More Complex
+
+- Find number of handlers in MS
+
+  ps as | grep handler | grep -v grep | wc -l
+
+- Find which IPs CV forwarders connect to
+
+  sudo netstat -na | grep 5555 | awk ‘{print $5}’ | sort | uniq
+
+- Find the block number of MTD named ‘App’
+
+  cat /proc/mtd | grep App | cut -d ‘:’ -f 1 | sed -e ‘/^mtd//’
+
+* Another Way
+
+Use named pipe
+
+See demo
+
+* Does it remind you of something?
+
+* Channel
+
+.play unix_phil/ch_test.go /func main/,/^}/
+
+* 有 87 分像
+
+Pipe is Channel in OS level
+
+or, 
+Channel is Pipe in language level?
+
+* References
+
+[[https://en.wikipedia.org/wiki/Unix_philosophy][_UNIX_Philosophy_]], Wikipedia
+
+[[https://www.cyut.edu.tw/~ckhung/a/c013.php#combination][_組合的力量_]], 洪朝貴, 2001
