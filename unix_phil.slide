@@ -18,15 +18,13 @@ Use it with cautions.
 
 * Everything Is File
 
-...almost.
-
-*File* is the concept to model resources managed by UNIX
+*File* is the concept to model I/O resources managed by UNIX
 eg. device, socket, console, etc.
 
 Each file is represented by a file descriptor for a given process
 
 Basic operations:
-open, read, write, close
+read, write, close
 
 And your program is logic interacting with files
 
