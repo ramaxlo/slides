@@ -5,7 +5,9 @@ Ramax Lo
 
 * Disclaimer
 
-This is a summary from my learning experience of UNIX/Linux
+There is already a [[https://en.wikipedia.org/wiki/Unix_philosophy][Wiki page]] on UNIX Philosophy.
+
+The following is according to my understanding of UNIX/Linux.
 Just personal opinions. Might not be correct.
 Use it with cautions.
 
@@ -24,7 +26,7 @@ eg. device, socket, console, etc.
 Each file is represented by a file descriptor for a given process
 
 Basic operations:
-read, write, close
+`read`, `write`, `close`
 
 And your program is logic interacting with files
 
@@ -36,7 +38,7 @@ Each program does only one thing
 
 Keep the logic simple and straitforward. It tends to be bug-free when it's simple.
 
-Utilities
+Small programs
 
  ls, sed, cat, more, sort, uniq, cut, head, tail, wc, grep, find, ...
 
@@ -44,7 +46,7 @@ Utilities
 
 * Make program act like a filter
 
-Each program has 3 fds opened by UNIX:
+Each running program has 3 fds opened by OS:
 stdin(0), stdout(1), stderr(2)
 
 The easy way to interact with outside world:
@@ -54,7 +56,7 @@ Program only outputs processed result and nothing else.
 
 * Philosophy 4
 
-* Composition
+* Combination
 
 Combine basic blocks to perform sophisticated tasks
 
@@ -95,6 +97,7 @@ See demo
 * Channel
 
 .play unix_phil/ch_test.go /func main/,/^}/
+.code unix_phil/ch_test.go /func writer/,/^}/
 
 * 有 87 分像
 
