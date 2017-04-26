@@ -56,7 +56,7 @@ Program only outputs processed result and nothing else.
 
 * Composition
 
-Compose basic blocks to perform sophisticated tasks
+Combine basic blocks to perform sophisticated tasks
 
 Use *pipe* to chain stdout of one program to stdin of another
 
