@@ -133,3 +133,8 @@ Thanks to Open Source, now you have code in your hands.
 [[https://en.wikipedia.org/wiki/Unix_philosophy][_UNIX_Philosophy_]], Wikipedia
 
 [[https://www.cyut.edu.tw/~ckhung/a/c013.php#combination][_組合的力量_]], 洪朝貴, 2001
+
+[[http://yarchive.net/comp/linux/everything_is_file.html][_Linus_on_file_]], LKML Archive
+#Linus criticized POSIX signal & timer API is bad because it doesn't do it in UNIX way.
+#He prefered `signalfd_create` over `sigaction` and `timerfd_create` over `timer_create`, so that we can handle them just like regular file descriptors.
+#Linus emphasizes "Everything is a file descriptor, or a process".
