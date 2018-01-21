@@ -11,7 +11,7 @@ Pipeline pattern is commonly seen in multimedia frameworks/libraries/application
 - gstreamer
 - live555
 
-Pattern can be implemented in any language, but I think it's easier with Go.
+It can be implemented in any language, but I think it's easier with Go.
 
 * Pipeline
 
