@@ -1,0 +1,77 @@
+Implement Pipeline Pattern in Go
+Dec 28 2017
+
+Ramax Lo
+
+* Overview
+
+Pipeline pattern is commonly seen in multimedia frameworks/libraries/applications
+
+- ffmpeg
+- gstreamer
+- live555
+
+Pattern can be implemented in any language, but I think it's easier with Go.
+
+* Pipeline
+
+.image pipeline_in_go/pipeline.png _ 800
+
+Data generated in source can be read from outside of the pipeline, eg. file or network
+
+Data consumed in sink can be written to outside of the pipeline.
+
+* Interface
+
+.code pipeline_in_go/types.go /type Source/,/^}/
+
+.code pipeline_in_go/types.go /type Sink/,/^}/
+
+.code pipeline_in_go/types.go /type Element/,/^}/
+
+* Source Implementation
+
+.code pipeline_in_go/test_source.go /type TestSource/,/^}/
+
+.code pipeline_in_go/test_source.go /IMP BEGIN OMIT/,/IMP END OMIT/
+
+* Source Implementation
+
+.code pipeline_in_go/test_source.go /func .+loop()/,/^}/ HL1
+
+* Element Implementation
+
+.code pipeline_in_go/test_element.go /func .+loop()/,/^}/ HL1
+
+* Sink Implementation
+
+.code pipeline_in_go/test_sink.go /IMP BEGIN OMIT/,/IMP END OMIT/ HL1
+
+* Put Them All
+
+.code pipeline_in_go/main.go /BEGIN OMIT/,/END OMIT/
+
+* How to Stop?
+
+Source
+.code pipeline_in_go/test_source.go /BEGIN2 OMIT/,/END2 OMIT/
+Element
+.code pipeline_in_go/test_element.go /BEGIN OMIT/,/END OMIT/
+Sink
+.code pipeline_in_go/test_sink.go /BEGIN2 OMIT/,/END2 OMIT/
+
+* How to Stop?
+
+Source closes output channel, which is input channel of the next stage.
+
+Then the stage closes its output channel to propagate the event.
+
+Chain effect. Amazing.
+
+* Summary
+
+Apply pipeline pattern when
+
+- The data processing has stages
+- Each stage has unified input/output interface definition
+- The data processing in each stage can be stateless or stateful.
