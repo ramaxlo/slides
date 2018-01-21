@@ -75,3 +75,8 @@ Apply pipeline pattern when
 - The data processing has stages
 - Each stage has unified input/output interface definition
 - The data processing in each stage can be stateless or stateful.
+
+* Consideration
+
+- If Sink blocks, what will happen?
+- How to handle it?
