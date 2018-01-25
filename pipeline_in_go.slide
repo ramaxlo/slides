@@ -11,7 +11,7 @@ Pipeline pattern is commonly seen in multimedia frameworks/libraries/application
 - gstreamer
 - live555
 
-It can be implemented in any language, but I think it's easier with Go.
+It can be implemented in any language, but it's easier with Go.
 
 * Pipeline
 
@@ -78,5 +78,4 @@ Apply pipeline pattern when
 
 * Consideration
 
-- If Sink blocks, what will happen?
-- How to handle it?
+- If the Sink is busy on processing instead of receiving data, what will happen? How to handle it?
