@@ -51,6 +51,8 @@ Data consumed in sink can be written to outside of the pipeline.
 
 .code pipeline_in_go/main.go /BEGIN OMIT/,/END OMIT/
 
+No need to start TestElement & TestSink. They already started during creation.
+
 * How to Stop?
 
 Source
