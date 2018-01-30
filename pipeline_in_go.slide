@@ -53,6 +53,10 @@ Data consumed in sink can be written to outside of the pipeline.
 
 No need to start TestElement & TestSink. They already started during creation.
 
+* Execution Flow
+
+.image pipeline_in_go/pipeline_exec_flow.png 550 _
+
 * How to Stop?
 
 Source
