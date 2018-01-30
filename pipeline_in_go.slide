@@ -70,6 +70,16 @@ Then the stage closes its output channel to propagate the event.
 
 Chain effect. Amazing.
 
+* But...
+
+If the Sink is busy on processing instead of receiving data, what will happen?
+
+How to handle it?
+
+* We Need Queue
+
+.code pipeline_in_go/test_element_q.go /BEGIN OMIT/,/END OMIT/
+
 * Summary
 
 Apply pipeline pattern when
@@ -78,6 +88,10 @@ Apply pipeline pattern when
 - Each stage has unified input/output interface definition
 - The data processing in each stage can be stateless or stateful.
 
-* Consideration
+* References
 
-- If the Sink is busy on processing instead of receiving data, what will happen? How to handle it?
+.link https://talks.golang.org/2012/concurrency.slide#1 Go Concurrency Patterns
+
+.link https://talks.golang.org/2013/advconc.slide#1 Advanced Go Concurrency Patterns
+
+.link https://blog.golang.org/pipelines Go Concurrency Patterns: Pipelines and cancellation
